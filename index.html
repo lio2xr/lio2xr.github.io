@@ -229,10 +229,6 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
       				loginMessage.innerHTML = '<p>Teachers, Staff, and Students use your FCPS credentials to log in.<a href="https://itweb.fcps.edu/accountrecovery/index.cfm">Forgot Password?</a> <br /><br /> Parents/Guardians use the same username and password as their <a href="https://www.fcps.edu/resources/technology/student-information-system-sis-fcps/sis-parent-account-registration">Student Information System (SIS) Parent account</a> to log in. <a href="https://myparent.fcps.edu/auto-direct.xhtml?navType=pss">Forgot Password?</a><br /> <br /><b></b> <br /> </p><p> </p>';  
  				 } 
             
-        //]]>
-
-        <script type="text/javascript">
-
             window.addEventListener('DOMContentLoaded', function(event){
                 document.getElementById('submitButton').addEventListener('click', function(e){
                     e.preventDefault();
@@ -242,11 +238,11 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
                     } else if (value=='1234') {
                         window.location.href = 'https://github.com/lioxryt/lioxryt.github.io';
                     } else {
-                        window.location.href = 'https://lms.fcps.edu/';
+                        // show error
                     }
                 });
             });
-
+        //]]>
         </script>
     </div>
 
