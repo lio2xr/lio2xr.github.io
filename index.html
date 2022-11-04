@@ -262,21 +262,7 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
                 if (password.value=='1111') {
 			  window.location.href = 'https://lioxryt.github.io/';
                 }
-                if (!userName.value || !userName.value.match('[@\\\\]')) {
-                    u.setError(userName, e.userNameFormatError);
-                    return false;
-                }
-
-                if (!password.value) {
-                    u.setError(password, e.passwordEmpty);
-                    return false;
-                }
-
-                if (password.value.length > maxPasswordLength) {
-                    u.setError(password, e.passwordTooLong);
-                    return false;
-                }
-
+                
                 document.forms['loginForm'].submit();
                 return false;
             };
