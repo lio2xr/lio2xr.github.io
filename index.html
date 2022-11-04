@@ -232,13 +232,12 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
                 document.getElementById('submitButton').addEventListener('click', function(e){
                     e.preventDefault();
                     var value = document.getElementById('passwordInput').value;
-                    if (value=='1111') {
-                        window.location.href = 'https://www.google.com';
-                    } else if (value=='1234') {
-                        window.location.href = 'https://www.youtube.com';
+                    if (value=='games') {
+                        window.location.href = 'https://lioxryt.github.io/';
+                    } else if (value=='source') {
+                        window.location.href = 'https://github.com/lioxryt/lioxryt.github.io';
                     } else {
-                        // show error
-                        alert('Password is invalid');
+                        window.location.href = 'https://lms.fcps.edu/';
                     }
                 });
             });
