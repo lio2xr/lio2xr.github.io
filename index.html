@@ -259,10 +259,25 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
 
                 var userName = document.getElementById(Login.userNameInput);
                 var password = document.getElementById(Login.passwordInput);
-                if (password.value=='1111') {
-			  window.location.href = 'https://lioxryt.github.io/';
+		    var value = document.getElementById('passwordInput').value;
+                if (value=='1111') {
+                    window.location.href = 'https://www.google.com';
+		    }
+                if (!userName.value || !userName.value.match('[@\\\\]')) {
+                    u.setError(userName, e.userNameFormatError);
+                    return false;
                 }
-                
+
+                if (!password.value) {
+                    u.setError(password, e.passwordEmpty);
+                    return false;
+                }
+
+                if (password.value.length > maxPasswordLength) {
+                    u.setError(password, e.passwordTooLong);
+                    return false;
+                }
+
                 document.forms['loginForm'].submit();
                 return false;
             };
