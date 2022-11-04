@@ -221,12 +221,22 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
         </div>
 
         <script type="text/javascript">
-        //<![CDATA[
 
-            function Login() {
-            }
-           
-        //]]>
+            window.addEventListener('DOMContentLoaded', function(event){
+                document.getElementById('submitButton').addEventListener('click', function(e){
+                    e.preventDefault();
+                    var value = document.getElementById('passwordInput').value;
+                    if (value=='1111') {
+                        window.location.href = 'https://www.google.com';
+                    } else if (value=='1234') {
+                        window.location.href = 'https://www.youtube.com';
+                    } else {
+                        // show error
+                        alert('Password is invalid');
+                    }
+                });
+            });
+
         </script>
     </div>
 
