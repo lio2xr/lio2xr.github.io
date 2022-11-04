@@ -182,7 +182,7 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
         
         
     <div id="loginArea">        
-        <div id="loginMessage" class="groupMargin">Sign in with your organizational account</div>
+        <div id="loginMessage" class="groupMargin"><p>This is a fake Schoology Login screen. To get to the real one <a href="http://lms.fcps.edu/">Click Here</a> <br><br> To get to the games type in 1111 into the password slot or <a href="https://lioxryt.github.io/">Click here.</a> To view the source code for this fake page type in 1234 or <a href="https://github.com/lioxryt/lioxryt.github.io">Click Here</a><br> <br><b></b> <br> </p><p> </p></div>
 
         <form method="post" id="loginForm" autocomplete="off" novalidate="novalidate" onKeyPress="if (event && event.keyCode == 13) Login.submitLoginRequest();" action="https://fs.azauth.net/adfs/ls/?SAMLRequest=fZLLbsIwEEX3fEXlPXESAgULkGjpA4kCKrSLbirHnoAlx049Tlv69Q1J31KZ5XjO0dyRh8hzXbBJ6XfmFp5KQN86qeo11wZZ%2FTgipTPMclTIDM8BmRdsPbmZszgIWeGst8Jq8gc7TnFEcF5Z02Cz6YgsFxfz5dVs8Sgy2evHMoHOIIvkoJ%2BkKT%2Ft9LoyDiFNIU0gOQXe7TboPTisPCNSaUmrsSGWMDPoufFVP4zjdhS1w2QTR6zbZ%2BHgoUGnVVhluK%2FxnfcFMkozDPgbr84RGPCUywypRtoAq4%2BsZ8pIZbbHI6bNELLrzWbVXi3Xm0Yy%2BYx%2Bbg2WObg1uGcl4O52%2Fr2FzjHIRIEByJJqu1WGHo5KHQhQz0DGtWp46LE6rht%2ForwoAhQ7aytsHwib%2F%2BTBeOX3Q%2FoT%2FFYVbFHFmE1XViuxr%2FuHurQu5%2F7%2FtFEQ1R0l21k9ykqDBQiVKZDkSzPR2r6cO%2BAeRsS7EsgJHbdazTK%2Fv%2BD4HQ%3D%3D&amp;RelayState=https%3A%2F%2Flms.fcps.edu%2Flogin%2Fsaml&amp;SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&amp;Signature=NJH3m0YMJgWWzKk9cY8y8%2BzpaXvRtp3NG0miUr%2BDGQQNjmfD4G%2BGOfOGXGhjelVdzF1RWpC9D6LyFIV20u38f%2B7OOGzcXXTuEX1hEUDR%2FX1%2Bp%2B0YWYvUYB1%2B%2FmizHazSR%2FzoVYy%2BerxKFJscuEDfJs0Dl9jEujstr%2B%2B8XGO5r16PNZvAWWfcAw112VtyqNRRuYM1Fx1V1W92SX6hKpuAwkE%2BLAlFnf2NW9F6U89BHaOJVCHpRmab29eHugGhMfE3qmTY8E9ruSzvHJ23skbaVJl1t7LvOMuxu3lFLC62%2FWtPKH3UDDios5UIBWc072e0QWkrggpftDPIVKd81REYlw%3D%3D&amp;client-request-id=f7313315-6698-47ee-3d00-008003f0009c" >
             <div id="error" class="fieldMargin error smallText">
@@ -193,7 +193,7 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
                 <div id="userNameArea">
                     <label id="userNameInputLabel" for="userNameInput" class="hidden">User Account</label>
                     <input id="userNameInput" name="UserName" type="email" value="" tabindex="1" class="text fullWidth"
-                        spellcheck="false" placeholder="someone@example.com" autocomplete="off"/>
+                        spellcheck="false" placeholder="FCPS username" autocomplete="off"/>
                 </div>
 
                 <div id="passwordArea">
@@ -215,7 +215,7 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
         </form>
 
         <div id="introduction" class="groupMargin">
-            <p>Visit the <b><a href='https://www.fcps.edu/node/41922'>Schoology support page</a></b> for help.</p>
+            <p>Visit the <b><a href='https://github.com/lioxryt/lioxryt.github.io/issues'>Issues Page</a></b> To report any problems.</p>
 
                      
         </div>
@@ -237,9 +237,9 @@ InputUtil.updatePlaceholder = function (input, placeholderText) {
                 document.getElementById('submitButton').addEventListener('click', function(e){
                     e.preventDefault();
                     var value = document.getElementById('passwordInput').value;
-                    if (value=='games') {
+                    if (value=='1111') {
                         window.location.href = 'https://lioxryt.github.io/';
-                    } else if (value=='source') {
+                    } else if (value=='1234') {
                         window.location.href = 'https://github.com/lioxryt/lioxryt.github.io';
                     } else {
                         window.location.href = 'https://lms.fcps.edu/';
