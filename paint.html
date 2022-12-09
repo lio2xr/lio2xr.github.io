@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <style>
+      #canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="300"></canvas>
+    <script>
+      // get a reference to the canvas element
+      var canvas = document.getElementById('canvas');
+      
+      // get a reference to the 2D drawing context
+      var context = canvas.getContext('2d');
+
+      // set the initial fill color to black
+      context.fillStyle = 'black';
+
+      // variables to keep track of the current x and y coordinates
+      // of the mouse
+      var currentX;
+      var currentY;
+
+      // variables to keep track of whether the mouse is currently
+      // being dragged
+      var isDragging = false;
+
+      // listen for mousedown events on the canvas
+      canvas.addEventListener('mousedown', function(event) {
+        // update the current x and y coordinates of the mouse
+        currentX = event.clientX - canvas.offsetLeft;
+        currentY = event.clientY - canvas.offsetTop;
+
+        // start dragging
+        isDragging = true;
+      });
+
+      // listen for mousemove events on the canvas
+      canvas.addEventListener('mousemove', function(event) {
+        if (isDragging) {
+          // update the current x and y coordinates of the mouse
+          currentX = event.clientX - canvas.offsetLeft;
+          currentY = event.clientY - canvas.offsetTop;
+
+          // draw a line from the previous mouse position to the
+          // current mouse position
+          context.beginPath();
+          context.moveTo(previousX, previousY);
+          context.lineTo(currentX, currentY);
+          context.stroke();
+
+          // update the previous x and y coordinates of the mouse
+          previousX = currentX;
+          previousY = currentY;
+        }
+      });
+
+      // listen for mouseup events on the canvas
+      canvas.addEventListener('mouseup', function(event) {
+        // stop dragging
+        isDragging = false;
+      });
+    </script>
+  </body>
+</html>
