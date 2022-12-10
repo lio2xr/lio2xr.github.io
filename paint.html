@@ -1,67 +1,68 @@
 <html>
-  <head>
-    <style>
-      #canvas {
-        border: 1px solid black;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="canvas" width="500" height="300"></canvas>
-    <script>
-      // get a reference to the canvas element
-      var canvas = document.getElementById('canvas');
-      
-      // get a reference to the 2D drawing context
-      var context = canvas.getContext('2d');
+<head>
+  <style>
+    .chatroom {
+      /* Add some styling to the chatroom container */
+      width: 500px;
+      height: 400px;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+      padding: 10px;
+    }
 
-      // set the initial fill color to black
-      context.fillStyle = 'black';
+    .message {
+      /* Add some styling to the message container */
+      border-bottom: 1px solid #ccc;
+      padding: 5px 0;
+    }
 
-      // variables to keep track of the current x and y coordinates
-      // of the mouse
-      var currentX;
-      var currentY;
+    .username {
+      /* Add some styling to the username */
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="chatroom">
+    <div id="messages">
+      <!-- This div will be used to display the messages -->
+    </div>
+    <form>
+      <label for="username">Username:</label><br />
+      <input type="text" id="username" placeholder="Enter your username" />
+      <br /><br />
+      <label for="message">Message:</label><br />
+      <textarea id="message" placeholder="Enter your message"></textarea>
+      <br /><br />
+      <button type="button" onclick="sendMessage()">Send</button>
+    </form>
+  </div>
 
-      // variables to keep track of whether the mouse is currently
-      // being dragged
-      var isDragging = false;
+  <script>
+    var username; // This variable will hold the user's username
 
-      // listen for mousedown events on the canvas
-      canvas.addEventListener('mousedown', function(event) {
-        // update the current x and y coordinates of the mouse
-        currentX = event.clientX - canvas.offsetLeft;
-        currentY = event.clientY - canvas.offsetTop;
+    // This function is called when the user clicks the "Send" button
+    function sendMessage() {
+      // Get the user's username and message
+      username = document.getElementById('username').value;
+      var message = document.getElementById('message').value;
 
-        // start dragging
-        isDragging = true;
-      });
+      // Create a div to hold the message
+      var messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
 
-      // listen for mousemove events on the canvas
-      canvas.addEventListener('mousemove', function(event) {
-        if (isDragging) {
-          // update the current x and y coordinates of the mouse
-          currentX = event.clientX - canvas.offsetLeft;
-          currentY = event.clientY - canvas.offsetTop;
+      // Create a span to hold the username
+      var usernameSpan = document.createElement('span');
+      usernameSpan.classList.add('username');
+      usernameSpan.innerHTML = username + ': ';
 
-          // draw a line from the previous mouse position to the
-          // current mouse position
-          context.beginPath();
-          context.moveTo(previousX, previousY);
-          context.lineTo(currentX, currentY);
-          context.stroke();
+      // Add the username and message to the message div
+      messageDiv.appendChild(usernameSpan);
+      messageDiv.innerHTML += message;
 
-          // update the previous x and y coordinates of the mouse
-          previousX = currentX;
-          previousY = currentY;
-        }
-      });
-
-      // listen for mouseup events on the canvas
-      canvas.addEventListener('mouseup', function(event) {
-        // stop dragging
-        isDragging = false;
-      });
-    </script>
-  </body>
+      // Add the message div to the page
+      document.getElementById('messages').appendChild(messageDiv);
+    }
+  </script>
+</body>
 </html>
