@@ -47,22 +47,26 @@
       username = document.getElementById('username').value;
       var message = document.getElementById('message').value;
 
-      // Create a div to hold the message
-      var messageDiv = document.createElement('div');
-      messageDiv.classList.add('message');
-
-      // Create a span to hold the username
-      var usernameSpan = document.createElement('span');
-      usernameSpan.classList.add('username');
-      usernameSpan.innerHTML = username + ': ';
-
-      // Add the username and message to the message div
-      messageDiv.appendChild(usernameSpan);
-      messageDiv.innerHTML += message;
-
-      // Add the message div to the page
-      document.getElementById('messages').appendChild(messageDiv);
+      // Send the message to the server using an AJAX request
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // If the message was sent successfully, clear the message input field
+          document.getElementById('message').value = '';
+        }
+      };
+      xhttp.open('POST', 'send-message.php', true);
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhttp.send('username=' + username + '&message=' + message);
     }
-  </script>
-</body>
-</html>
+
+    // This function is called periodically to retrieve new messages from the server
+    function getMessages() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // Parse the response from the server (a JSON string) into a JavaScript object
+          var response = JSON.parse(this.responseText);
+
+          // Loop through the messages in the response
+          for (var i = 0; i < response.messages.length; i++) {
