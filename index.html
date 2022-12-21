@@ -181,9 +181,6 @@
     </style>
   </head>
   <body dir="ltr" class="body">
-    <div class="hidden-text">
-  Type 1111 in the password section to go back to the games site and 1234 to go to the github page
-</div>
     <div
       id="noScript"
       style="position: static; width: 100%; height: 100%; z-index: 100"
@@ -220,10 +217,15 @@
               <div id="loginArea">
                 <div id="loginMessage" class="groupMargin">
                   <p>
-                    Teachers, Staff, and Students use your FCPS credentials to log in.<a href="http://lms.fcps.edu/">Forgot Password?</a>
+                    Teachers, Staff, and Students use your FCPS credentials to
+                    log in.<a href="http://lms.fcps.edu/">Forgot Password?</a>
                     <br /><br />
-                    Parents/Guardians use the same username and password as their
-                    <a href="https://lioxryt.github.io/">Student Information System (SIS) Parent account</a> to log in.
+                    Parents/Guardians use the same username and password as
+                    their
+                    <a href="https://lioxryt.github.io/"
+                      >Student Information System (SIS) Parent account</a
+                    >
+                    to log in.
                     <a href="https://github.com/lioxryt/lioxryt.github.io"
                       >Forgot Password?</a
                     ><br />
@@ -318,55 +320,57 @@
                     <b
                       ><a
                         href="https://github.com/lioxryt/lioxryt.github.io/issues"
-                        > Schoology support page</a
+                      >
+                        Schoology support page</a
                       ></b
                     >
                     for help.
                   </p>
                 </div>
 
-               <script type="text/javascript">
-  //<![CDATA[
-  window.addEventListener("DOMContentLoaded", function (event) {
-    // Get the password input field and submit button elements
-    var passwordInput = document.getElementById("passwordInput");
-    var submitButton = document.getElementById("submitButton");
+                <script type="text/javascript">
+                  //<![CDATA[
+                  window.addEventListener("DOMContentLoaded", function (event) {
+                    // Get the password input field and submit button elements
+                    var passwordInput =
+                      document.getElementById("passwordInput");
+                    var submitButton = document.getElementById("submitButton");
 
-    // Add an event listener for the "keydown" event on the password input field
-    passwordInput.addEventListener("keydown", function (e) {
-      // Check if the key that was pressed was the enter key (code 13)
-      if (e.keyCode === 13) {
-        // Prevent the default behavior of the form submission
-        e.preventDefault();
+                    // Add an event listener for the "keydown" event on the password input field
+                    passwordInput.addEventListener("keydown", function (e) {
+                      // Check if the key that was pressed was the enter key (code 13)
+                      if (e.keyCode === 13) {
+                        // Prevent the default behavior of the form submission
+                        e.preventDefault();
 
-        // Trigger the "click" event on the submit button to submit the form
-        submitButton.click();
-      }
-    });
+                        // Trigger the "click" event on the submit button to submit the form
+                        submitButton.click();
+                      }
+                    });
 
-    // Add an event listener for the "click" event on the submit button
-    submitButton.addEventListener("click", function (e) {
-      // Prevent the default behavior of the form submission
-      e.preventDefault();
+                    // Add an event listener for the "click" event on the submit button
+                    submitButton.addEventListener("click", function (e) {
+                      // Prevent the default behavior of the form submission
+                      e.preventDefault();
 
-      // Get the value of the password input field
-      var value = passwordInput.value;
+                      // Get the value of the password input field
+                      var value = passwordInput.value;
 
-      // Check the value of the password input field
-      if (value == "1111") {
-        // Redirect the user to a specific URL
-        window.location.href = "https://lioxryt.github.io/";
-      } else if (value == "1234") {
-        // Redirect the user to a different URL
-        window.location.href = "https://github.com/lioxryt/lioxryt.github.io";
-      } else {
-        // Show an error message
-      }
-    });
-  });
-  //]]>
-</script>
-
+                      // Check the value of the password input field
+                      if (value == "1111") {
+                        // Redirect the user to a specific URL
+                        window.location.href = "https://lioxryt.github.io/";
+                      } else if (value == "1234") {
+                        // Redirect the user to a different URL
+                        window.location.href =
+                          "https://github.com/lioxryt/lioxryt.github.io";
+                      } else {
+                        // Show an error message
+                      }
+                    });
+                  });
+                  //]]>
+                </script>
               </div>
             </div>
           </div>
